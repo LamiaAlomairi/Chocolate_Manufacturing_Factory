@@ -20,4 +20,7 @@ public class Employee {
     Double salary;
     String joiningDate;
 
+    @ManyToOne
+    @JoinColumn(name = "factory_id", referencedColumnName = "id")
+    Factory factory;
 }
