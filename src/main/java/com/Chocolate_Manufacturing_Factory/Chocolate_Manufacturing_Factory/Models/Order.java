@@ -17,5 +17,5 @@ public class Order {
     Long id;
     Integer quantity;
     String shipping_address;
-    
+
 }
