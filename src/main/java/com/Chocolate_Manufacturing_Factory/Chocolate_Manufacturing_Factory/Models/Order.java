@@ -18,4 +18,11 @@ public class Order {
     Integer quantity;
     String shipping_address;
 
+    @ManyToOne
+    @JoinColumn(name = "chocolate_id", referencedColumnName = "id")
+    Chocolate chocolate;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    User user;
 }
