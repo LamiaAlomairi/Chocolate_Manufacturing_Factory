@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,4 +20,11 @@ public class Ingredient {
     Integer quantity;
     Double cost;
 
+    @ManyToOne
+    @JoinColumn(name = "supplier_id", referencedColumnName = "id")
+    Supplier supplier;
+
+    @ManyToMany
+    @JoinTable(name = "ingredient_chocolate", joinColumns = @JoinColumn(name = "ingredient_id"), inverseJoinColumns = @JoinColumn(name = "chocolate_id"))
+    private List<Chocolate> chocolates;
 }
