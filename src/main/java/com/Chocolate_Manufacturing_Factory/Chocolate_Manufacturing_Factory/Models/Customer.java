@@ -12,16 +12,16 @@ import java.util.List;
 @Setter
 @Data
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "customer")
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long user_id;
+    Long customer_id;
     String name;
     String address;
     Integer phone_number;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "customer")
     @JsonIgnore
     private List<Order> orders;
 }
