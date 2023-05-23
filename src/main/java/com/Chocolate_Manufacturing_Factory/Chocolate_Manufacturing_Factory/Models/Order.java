@@ -23,6 +23,6 @@ public class Order {
     Chocolate chocolate;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    User user;
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    Customer customer;
 }
