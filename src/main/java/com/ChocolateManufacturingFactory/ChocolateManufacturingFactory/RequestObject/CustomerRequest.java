@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class UserRequest {
+public class CustomerRequest {
 
 }

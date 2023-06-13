@@ -13,15 +13,14 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     Integer quantity;
     Double price;
-    String manufacturingDate;
-    String expirationDate;
+    List<String> ingredients;
 
     @OneToMany(mappedBy = "product")
     @JsonIgnore

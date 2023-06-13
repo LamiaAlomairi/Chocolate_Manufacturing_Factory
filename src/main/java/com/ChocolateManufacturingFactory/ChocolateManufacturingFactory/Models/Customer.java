@@ -12,8 +12,8 @@ import java.util.*;
 @Setter
 @Data
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "customer")
+public class Customer extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;

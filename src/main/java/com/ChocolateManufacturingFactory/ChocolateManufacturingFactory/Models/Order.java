@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "order")
-public class Order {
+public class Order extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -23,6 +23,6 @@ public class Order {
     Product product;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    User user;
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
+    Customer customer;
 }
