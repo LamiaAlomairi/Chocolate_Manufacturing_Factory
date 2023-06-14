@@ -20,8 +20,4 @@ public class Factory extends BaseEntity {
     String name;
     String location;
     String email;
-
-    @OneToMany(mappedBy = "factory")
-    @JsonIgnore
-    private List<Employee> employees;
 }

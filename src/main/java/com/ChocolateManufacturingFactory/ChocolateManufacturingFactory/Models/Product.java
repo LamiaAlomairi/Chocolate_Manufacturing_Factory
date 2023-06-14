@@ -1,10 +1,8 @@
 package com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.Models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,10 +18,6 @@ public class Product extends BaseEntity {
     String name;
     Integer quantity;
     Double price;
-    List<String> ingredients;
-
-    @OneToMany(mappedBy = "product")
-    @JsonIgnore
-    private List<Order> orders;
-
+    @ElementCollection
+    private List<String> ingredients;
 }

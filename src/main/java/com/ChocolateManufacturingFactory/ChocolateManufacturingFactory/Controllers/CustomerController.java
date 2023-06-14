@@ -11,14 +11,13 @@ import java.util.List;
 public class CustomerController {
     @Autowired
     CustomerService customerService;
-    @RequestMapping(value = "getAll", method = RequestMethod.GET)
-    public List<Customer> getAllUsers() {
 
+    @GetMapping(value = "getAll")
+    public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
     }
     @GetMapping(value = "getById")
-    public Customer getUserById(@RequestParam Long id) {
-
+    public Customer getCustomerById(@RequestParam Long id) {
         return customerService.getCustomerById(id);
     }
 }

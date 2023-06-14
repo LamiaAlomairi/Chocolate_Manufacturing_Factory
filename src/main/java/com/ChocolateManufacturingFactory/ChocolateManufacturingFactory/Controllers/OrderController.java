@@ -15,12 +15,10 @@ public class OrderController {
     OrderService orderService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Order> getAllOrders() {
-
         return orderService.getAllOrders();
     }
     @GetMapping(value = "getById")
     public Order getOrderById(@RequestParam Long id) {
-
         return orderService.getOrderById(id);
     }
 }
