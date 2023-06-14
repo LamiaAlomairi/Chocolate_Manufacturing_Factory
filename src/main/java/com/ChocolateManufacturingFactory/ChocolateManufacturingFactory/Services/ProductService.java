@@ -25,11 +25,13 @@ public class ProductService {
         productRepository.save(product);
     }
 
+    /******  Get all chocolate products  ******/
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return productRepository.getAllProducts();
     }
 
+    /******  Get chocolate product by id  ******/
     public Product getProductById(Long id) {
-        return productRepository.findById(id).get();
+        return productRepository.getProductById(id);
     }
 }

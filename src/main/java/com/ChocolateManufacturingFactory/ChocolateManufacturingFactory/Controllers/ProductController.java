@@ -4,13 +4,11 @@ import com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.Models.Pr
 import com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.RequestObject.ProductRequest;
 import com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 @RestController
 @RequestMapping(value = "api/products")
-//@Validated
 public class ProductController {
     @Autowired
     ProductService productService;
@@ -22,14 +20,16 @@ public class ProductController {
         productService.createProduct(productRequest);
     }
 
-
+    /******  Get all chocolate products  ******/
     @GetMapping
     public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
-    @GetMapping(value = "getById")
-    public Product getProductById(@RequestParam Long id) {
 
+    /******  Get chocolate product by id  ******/
+    @GetMapping(value = "{id}")
+    public Product getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
     }
+
 }
