@@ -26,4 +26,17 @@ public class ProductService {
     public Product getProductById(Long id) {
         return productRepository.getProductById(id);
     }
+
+    /******  Update chocolate product by id  ******/
+    public void updateProduct(Long id, ProductRequest productRequest) {
+        Product product = productRepository.getProductById(id);
+        if (product != null) {
+            product.setName(productRequest.getName());
+            product.setPrice(productRequest.getPrice());
+            product.setQuantity(productRequest.getQuantity());
+            product.setIngredients(productRequest.getIngredients());
+            product.setUpdatedDate(new Date());
+            productRepository.save(product);
+        }
+    }
 }

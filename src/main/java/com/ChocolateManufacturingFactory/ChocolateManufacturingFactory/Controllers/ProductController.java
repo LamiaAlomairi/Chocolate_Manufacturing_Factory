@@ -4,6 +4,7 @@ import com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.Models.Pr
 import com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.RequestObject.ProductRequest;
 import com.ChocolateManufacturingFactory.ChocolateManufacturingFactory.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -32,4 +33,10 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    /******  Update chocolate product by id  ******/
+    @PutMapping("{id}")
+//    @PreAuthorize("hasRole('USER')")
+    public void updateProduct(@PathVariable long id, @RequestBody @Validated ProductRequest productRequest) {
+        productService.updateProduct(id, productRequest);
+    }
 }
