@@ -18,8 +18,4 @@ public class Employee extends BaseEntity {
     String name;
     String phoneNumber;
     Double salary;
-
-    @ManyToOne
-    @JoinColumn(name = "factory_id", referencedColumnName = "id")
-    Factory factory;
 }

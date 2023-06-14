@@ -7,17 +7,21 @@ import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.util.Date;
 
 @Getter
 @Setter
 @Data
+@MappedSuperclass
 public class BaseEntity {
     Boolean isActive;
-    @CreatedDate
+//    @CreatedDate
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Muscat")
     Date createdDate;
-    @UpdateTimestamp
+//    @UpdateTimestamp
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Asia/Muscat")
     Date updatedDate;
 }

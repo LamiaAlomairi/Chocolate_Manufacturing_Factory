@@ -12,16 +12,8 @@ public class ProductService {
     ProductRepository productRepository;
 
     /******  User creating chocolate products  ******/
-//    public void createProduct(ProductRequest productRequest) {
-//        Product product = ProductRequest.convert(productRequest);
-//        productRepository.save(product);
-//    }
     public void createProduct(ProductRequest productRequest) {
-        Product product = new Product();
-        product.setName(productRequest.getName());
-        product.setQuantity(productRequest.getQuantity());
-        product.setPrice(productRequest.getPrice());
-        product.setIngredients(productRequest.getIngredients());
+        Product product = ProductRequest.convert(productRequest);
         productRepository.save(product);
     }
 
